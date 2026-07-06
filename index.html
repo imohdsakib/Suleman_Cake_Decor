@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sweet Layers | Luxury Cakes</title>
+    <title>Suleman Cake Decor</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
@@ -27,10 +27,12 @@
 
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <img src="images/logo.png" alt="Logo" class="logo">
+            <a class="logo" href="#home">
+                <img src="images/logo.png" alt="Logo" class="logo">
+            </a>
 
             <a class="navbar-brand" href="#home">
-                Sweet Layers
+                Suleman Cake Decor
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
@@ -94,7 +96,7 @@
                     </span>
 
                     <h1 class="hero-title">
-                        Sweet <span class="layers-color">Layers</span>
+                        Suleman <span class="layers-color"><br>Cake Decor</span>
                     </h1>
 
                     <h2 class="hero-heading">
@@ -151,7 +153,7 @@
                     </div>
 
                     <p>
-                        At Sweet Layers, every cake is more than just a dessert - it's a work of art. We use only the
+                        At Suleman Cake Decor, every cake is more than just a dessert - it's a work of art. We use only the
                         finest ingredients and pour our heart into every creation to make your celebrations
                         unforgettable.
                     </p>
@@ -224,7 +226,7 @@
             <!-- Cake Cards -->
             <div class="cakes-grid">
 
-                <div class="cake-card">
+                <div class="cake-card" data-category="birthday">
                     <div class="cake-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64">
                             <path d="M0 0h64v64H0z" fill="none" />
@@ -236,9 +238,10 @@
                     </div>
                     <h3>Birthday<br>Cakes</h3>
                     <img src="images/cake-categories/Cakes-Section/Birthday-Cake.png" alt="Birthday Cake">
+
                 </div>
 
-                <div class="cake-card">
+                <div class="cake-card" data-category="wedding">
                     <div class="cake-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 26 26">
                             <path d="M0 0h26v26H0z" fill="none" />
@@ -250,7 +253,7 @@
                     <img src="images/cake-categories/Cakes-Section/Wedding-Cake.png" alt="Wedding Cake">
                 </div>
 
-                <div class="cake-card">
+                <div class="cake-card" data-category="anniversary">
                     <div class="cake-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
                             <path d="M0 0h256v256H0z" fill="none" />
@@ -262,7 +265,7 @@
                     <img src="images/cake-categories/Cakes-Section/Anniversary-Cake.png" alt="Anniversary Cake">
                 </div>
 
-                <div class="cake-card">
+                <div class="cake-card" data-category="Baby">
                     <div class="cake-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                             <path d="M0 0h24v24H0z" fill="none" />
@@ -275,7 +278,7 @@
                     <img src="images/cake-categories/Cakes-Section/Baby-Shower-Cake.png" alt="Baby Shower Cake">
                 </div>
 
-                <div class="cake-card">
+                <div class="cake-card" data-category="chocolate">
                     <div class="cake-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32">
                             <path d="M0 0h32v32H0z" fill="none" />
@@ -291,7 +294,7 @@
                     <img src="images/cake-categories/Cakes-Section/Chocolate-Cake.png" alt="Chocolate Cake">
                 </div>
 
-                <div class="cake-card">
+                <div class="cake-card" data-category="Pastry">
                     <div class="cake-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48">
                             <path d="M0 0h48v48H0z" fill="none" />
@@ -314,7 +317,7 @@
 
             <!-- Button -->
             <div class="cakes-btn">
-                <a href="#" id="viewCakesBtn" class="view-cakes-btn">
+                <a href="" id="viewCakesBtn" class="view-cakes-btn">
                     View All Cakes →
                 </a>
             </div>
@@ -362,6 +365,10 @@
                 Pastry
             </button>
 
+            <button class="filter-btn" data-filter="custom">
+                Custom
+            </button>
+
         </div>
 
         <div class="gallery-grid">
@@ -377,7 +384,7 @@
             <div class="gallery-item birthday"><img src="images/cake-categories/Birthday-Cakes/birthday (9).jpg"></div>
             <div class="gallery-item birthday"><img src="images/cake-categories/Birthday-Cakes/birthday (10).jpg"></div>
             <div class="gallery-item birthday"><img src="images/cake-categories/Birthday-Cakes/birthday (11).jpg"></div>
-        
+
 
             <div class="gallery-item wedding"><img src="images/cake-categories/Wedding-Cakes/wedding (1).jpg"></div>
             <div class="gallery-item wedding"><img src="images/cake-categories/Wedding-Cakes/wedding (2).jpg"></div>
@@ -389,18 +396,27 @@
             <div class="gallery-item wedding"><img src="images/cake-categories/Wedding-Cakes/wedding (8).jpg"></div>
             <div class="gallery-item wedding"><img src="images/cake-categories/Wedding-Cakes/wedding (9).jpg"></div>
             <div class="gallery-item wedding"><img src="images/cake-categories/Wedding-Cakes/wedding (10).jpg"></div>
-        
 
-            <div class="gallery-item anniversary"><img src="images/cake-categories/Anniversary-Cakes/anniversary (1).jpg"></div>
-            <div class="gallery-item anniversary"><img src="images/cake-categories/Anniversary-Cakes/anniversary (2).jpg"></div>
-            <div class="gallery-item anniversary"><img src="images/cake-categories/Anniversary-Cakes/anniversary (3).jpg"></div>
-            <div class="gallery-item anniversary"><img src="images/cake-categories/Anniversary-Cakes/anniversary (4).jpg"></div>
-            <div class="gallery-item anniversary"><img src="images/cake-categories/Anniversary-Cakes/anniversary (5).jpg"></div>
-            <div class="gallery-item anniversary"><img src="images/cake-categories/Anniversary-Cakes/anniversary (6).jpg"></div>
-            <div class="gallery-item anniversary"><img src="images/cake-categories/Anniversary-Cakes/anniversary (7).jpg"></div>
-            <div class="gallery-item anniversary"><img src="images/cake-categories/Anniversary-Cakes/anniversary (8).jpg"></div>
-            <div class="gallery-item anniversary"><img src="images/cake-categories/Anniversary-Cakes/anniversary (9).jpg"></div>
-        
+
+            <div class="gallery-item anniversary"><img
+                    src="images/cake-categories/Anniversary-Cakes/anniversary (1).jpg"></div>
+            <div class="gallery-item anniversary"><img
+                    src="images/cake-categories/Anniversary-Cakes/anniversary (2).jpg"></div>
+            <div class="gallery-item anniversary"><img
+                    src="images/cake-categories/Anniversary-Cakes/anniversary (3).jpg"></div>
+            <div class="gallery-item anniversary"><img
+                    src="images/cake-categories/Anniversary-Cakes/anniversary (4).jpg"></div>
+            <div class="gallery-item anniversary"><img
+                    src="images/cake-categories/Anniversary-Cakes/anniversary (5).jpg"></div>
+            <div class="gallery-item anniversary"><img
+                    src="images/cake-categories/Anniversary-Cakes/anniversary (6).jpg"></div>
+            <div class="gallery-item anniversary"><img
+                    src="images/cake-categories/Anniversary-Cakes/anniversary (7).jpg"></div>
+            <div class="gallery-item anniversary"><img
+                    src="images/cake-categories/Anniversary-Cakes/anniversary (8).jpg"></div>
+            <div class="gallery-item anniversary"><img
+                    src="images/cake-categories/Anniversary-Cakes/anniversary (9).jpg"></div>
+
 
             <div class="gallery-item baby"><img src="images/cake-categories/Baby-Shower-Cakes/baby (1).jpg"></div>
             <div class="gallery-item baby"><img src="images/cake-categories/Baby-Shower-Cakes/baby (2).jpg"></div>
@@ -412,7 +428,7 @@
             <div class="gallery-item baby"><img src="images/cake-categories/Baby-Shower-Cakes/baby (8).jpg"></div>
             <div class="gallery-item baby"><img src="images/cake-categories/Baby-Shower-Cakes/baby (9).jpg"></div>
             <div class="gallery-item baby"><img src="images/cake-categories/Baby-Shower-Cakes/baby (10).jpg"></div>
-        
+
 
             <div class="gallery-item chocolate"><img src="images/cake-categories/Chocolate-Cakes/chocolate (1).jpg"></div>
             <div class="gallery-item chocolate"><img src="images/cake-categories/Chocolate-Cakes/chocolate (2).jpg"></div>
@@ -424,7 +440,7 @@
             <div class="gallery-item chocolate"><img src="images/cake-categories/Chocolate-Cakes/chocolate (8).jpg"></div>
             <div class="gallery-item chocolate"><img src="images/cake-categories/Chocolate-Cakes/chocolate (9).jpg"></div>
             <div class="gallery-item chocolate"><img src="images/cake-categories/Chocolate-Cakes/chocolate (10).jpg"></div>
-        
+
 
             <div class="gallery-item pastry"><img src="images/cake-categories/Pastry-Cakes/pastry (1).jpg"></div>
             <div class="gallery-item pastry"><img src="images/cake-categories/Pastry-Cakes/pastry (2).jpg"></div>
@@ -436,6 +452,30 @@
             <div class="gallery-item pastry"><img src="images/cake-categories/Pastry-Cakes/pastry (8).jpg"></div>
             <div class="gallery-item pastry"><img src="images/cake-categories/Pastry-Cakes/pastry (9).jpg"></div>
             <div class="gallery-item pastry"><img src="images/cake-categories/Pastry-Cakes/pastry (10).jpg"></div>
+
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (1).jpg" alt="Custom Cake 1"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (2).jpg" alt="Custom Cake 2"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (3).jpg" alt="Custom Cake 3"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (4).jpg" alt="Custom Cake 4"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (5).jpg" alt="Custom Cake 5"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (6).jpg" alt="Custom Cake 6"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (7).jpg" alt="Custom Cake 7"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (8).jpg" alt="Custom Cake 8"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (9).jpg" alt="Custom Cake 9"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (10).jpg" alt="Custom Cake 10"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (11).jpg" alt="Custom Cake 11"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (12).jpg" alt="Custom Cake 12"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (13).jpg" alt="Custom Cake 13"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (14).jpg" alt="Custom Cake 14"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (15).jpg" alt="Custom Cake 15"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (16).jpg" alt="Custom Cake 16"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (17).jpg" alt="Custom Cake 17"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (18).jpg" alt="Custom Cake 18"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (19).jpg" alt="Custom Cake 19"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (20).jpg" alt="Custom Cake 20"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (21).jpg" alt="Custom Cake 21"></div>
+            <div class="gallery-item custom"><img src="images/cake-categories/Custom-Cakes/custom (22).jpg" alt="Custom Cake 22"></div>
+            
         </div>
 
     </section>
@@ -527,21 +567,21 @@
                         <div class="stars">★★★★★</div>
                         <p>"The cake was absolutely stunning and tasted even better! Everyone at the party love it.
                             Highly recommended!"</p>
-                        <h5>- Priya Sharma</h5>
+                        <h5>- Mohd Sakib</h5>
                     </div>
 
                     <div class="review-card">
                         <div class="stars">★★★★★</div>
-                        <p>"Sweet Layers made our wedding cake and it was a masterpiece! The design was exactly what we
+                        <p>"Suleman Cake Decor made our wedding cake and it was a masterpiece! The design was exactly what we
                             wanted and the flavor was divine."</p>
-                        <h5>- Rahul Verma</h5>
+                        <h5>- Harsh Verma</h5>
                     </div>
 
                     <div class="review-card">
                         <div class="stars">★★★★★</div>
                         <p>"I ordered a custom cake for my son's birthday and it was a huge hit! The team was so helpful
                             and the cake was delicious."</p>
-                        <h5>- Anjali Mehta</h5>
+                        <h5>- Fiaz Noor</h5>
                     </div>
 
                     <button class="arrow next">&#10095;</button>
@@ -630,7 +670,7 @@
 
                     <ul class="footer-contact">
                         <li><i class="bi bi-telephone-fill"></i>
-                        <a href="tel:+917285865250">+91 7285865250</a>
+                            <a href="tel:+917285865250">+91 7285865250</a>
                         </li>
 
                         <li><i class="bi bi-envelope-fill"></i>
@@ -639,7 +679,7 @@
                     </ul>
 
                     <div class="footer-social">
-                        <a href="https://www.instagram.com/mohd9137428" target="_blank">
+                        <a href="https://www.instagram.com/suleman_cake_decor" target="_blank">
                             <i class="bi bi-instagram"></i>
                         </a>
 
@@ -661,10 +701,10 @@
 
             <div class="footer-bottom">
                 <div class="left">
-                    &copy; 2026 Sweet Layers. All rights reserved.
+                    &copy; 2026 Suleman Cake Decor. All rights reserved.
                 </div>
                 <div class="right">
-                    Designed & Developed by Mohd Sakib.
+                    Designed & Developed by <a href="https://www.linkedin.com/in/imohdsakib/" target="_blank">Mohd Sakib</a>.
                 </div>
             </div>
         </div>
@@ -673,7 +713,25 @@
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- JS -->
+
+    <!-- Gallery Modal -->
+
+    <div id="cakeModal" class="cake-modal">
+        <span class="close-modal">&times;</span>
+        <div class="cake-modal-content">
+            <div id="cakeImages"></div>
+        </div>
+    </div>
+   
+    <!-- Gallery Fullscreen Modal (for gallery images only) -->
+    <div id="galleryModal" class="cake-modal">
+        <span class="close-gallery">&times;</span>
+        <div class="cake-modal-content">
+            <img id="galleryFullscreenImage" src="" alt="Fullscreen Gallery Image">
+        </div>
+    </div>
+
+
     <script src="script.js"></script>
 
 </body>

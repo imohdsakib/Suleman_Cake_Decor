@@ -153,6 +153,7 @@ hiddenElements.forEach(el => {
 });
 
 
+
 /* Gallery Filter */
 
 const filterButtons = document.querySelectorAll(".filter-btn");
@@ -243,6 +244,8 @@ if (viewGalleryBtn) {
 if (navGalleryBtn) {
     navGalleryBtn.addEventListener("click", openGallery);
 }
+
+
 
 
 /* Review Slider */
@@ -360,5 +363,21 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 });
 
 
+const galleryModal = document.getElementById("galleryModal");
+const galleryFullscreenImage = document.getElementById("galleryFullscreenImage");
+const closeGallery = document.querySelector(".close-gallery");
 
-console.log("Sweet Layers Loaded Successfully 🚀");
+document.querySelectorAll(".gallery-item img").forEach(img => {
+  img.addEventListener("click", () => {
+    galleryFullscreenImage.src = img.src;
+    galleryModal.style.display = "flex";
+  });
+});
+
+closeGallery.onclick = () => galleryModal.style.display = "none";
+window.addEventListener("click", (e) => {
+  if (e.target === galleryModal) galleryModal.style.display = "none";
+});
+
+
+console.log("Suleman Cake Decor Loaded Successfully 🚀");
