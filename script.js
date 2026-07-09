@@ -64,32 +64,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const navbar = document.querySelector(".navbar-collapse");
 const toggler = document.querySelector(".navbar-toggler");
 
-document.addEventListener("click", function (e) {
+if (navbar && toggler) {
+    document.addEventListener("click", function (e) {
 
-    const isClickInsideNavbar = navbar.contains(e.target);
-    const isClickOnToggler = toggler.contains(e.target);
+        const isClickInsideNavbar = navbar.contains(e.target);
+        const isClickOnToggler = toggler.contains(e.target);
 
-    if (
-        navbar.classList.contains("show") &&
-        !isClickInsideNavbar &&
-        !isClickOnToggler
-    ) {
-        bootstrap.Collapse.getInstance(navbar).hide();
-    }
-
-});
-
-document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        if (window.innerWidth < 992) {
+        if (
+            navbar.classList.contains("show") &&
+            !isClickInsideNavbar &&
+            !isClickOnToggler
+        ) {
             bootstrap.Collapse.getInstance(navbar).hide();
         }
 
     });
 
-});
+    document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            if (window.innerWidth < 992) {
+                bootstrap.Collapse.getInstance(navbar).hide();
+            }
+
+        });
+
+    });
+}
 
 
 /* Hero Image Floating Animation */
@@ -195,27 +197,29 @@ filterButtons.forEach(button => {
 const btn = document.getElementById("viewCakesBtn");
 const gallery = document.getElementById("gallery");
 
-btn.addEventListener("click", function (e) {
+if (btn && gallery) {
+    btn.addEventListener("click", function (e) {
 
-    e.preventDefault();
+        e.preventDefault();
 
-    gallery.classList.toggle("show");
+        gallery.classList.toggle("show");
 
-    if (gallery.classList.contains("show")) {
+        if (gallery.classList.contains("show")) {
 
-        btn.textContent = "Hide Gallery ↑";
+            btn.textContent = "Hide Gallery ↑";
 
-        gallery.scrollIntoView({
-            behavior: "smooth"
-        });
+            gallery.scrollIntoView({
+                behavior: "smooth"
+            });
 
-    } else {
+        } else {
 
-        btn.textContent = "View All Cakes →";
+            btn.textContent = "View All Cakes →";
 
-    }
+        }
 
-});
+    });
+}
 
 // Hero Button
 const viewGalleryBtn = document.getElementById("viewGalleryBtn");
@@ -226,6 +230,10 @@ const navGalleryBtn = document.getElementById("navGalleryBtn");
 function openGallery(e) {
 
     e.preventDefault();
+
+    if (!gallery || !btn) {
+        return;
+    }
 
     gallery.classList.add("show");
 
@@ -243,6 +251,12 @@ if (viewGalleryBtn) {
 
 if (navGalleryBtn) {
     navGalleryBtn.addEventListener("click", openGallery);
+}
+
+const footerGalleryBtn = document.querySelector(".footer-section a[href='#gallery']");
+
+if (footerGalleryBtn) {
+    footerGalleryBtn.addEventListener("click", openGallery);
 }
 
 
@@ -265,29 +279,31 @@ function showReview(index){
     reviews[index].classList.add("active");
 }
 
-nextBtn.addEventListener("click",()=>{
+if (nextBtn && prevBtn && reviews.length) {
+    nextBtn.addEventListener("click",()=>{
 
-    current++;
+        current++;
 
-    if(current >= reviews.length){
-        current = 0;
-    }
+        if(current >= reviews.length){
+            current = 0;
+        }
 
-    showReview(current);
+        showReview(current);
 
-});
+    });
 
-prevBtn.addEventListener("click",()=>{
+    prevBtn.addEventListener("click",()=>{
 
-    current--;
+        current--;
 
-    if(current < 0){
-        current = reviews.length - 1;
-    }
+        if(current < 0){
+            current = reviews.length - 1;
+        }
 
-    showReview(current);
+        showReview(current);
 
-});
+    });
+}
 
 // Auto Slide
 setInterval(()=>{
@@ -303,81 +319,89 @@ setInterval(()=>{
 },5000);
 
 // First Review
-showReview(current);
+if (reviews.length) {
+    showReview(current);
+}
 
 
 
 /* Contact Form */
 
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
     
-    // Get form data
-    const name = document.querySelector('input[name="name"]').value;
-    const email = document.querySelector('input[name="email"]').value;
-    const message = document.querySelector('textarea[name="message"]').value;
+        // Get form data
+        const name = document.querySelector('input[name="name"]').value;
+        const email = document.querySelector('input[name="email"]').value;
+        const message = document.querySelector('textarea[name="message"]').value;
     
-    // Create mailto link
-    const subject = `Contact from ${name}`;
-    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-    const mailtoLink = `mailto:sweet0layers@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+        // Create mailto link
+        const subject = `Contact from ${name}`;
+        const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+        const mailtoLink = `mailto:sweet0layers@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
     
-    // Prepare Formspree data
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('message', message);
+        // Prepare Formspree data
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('message', message);
     
-    // Show loading
-    const submitBtn = document.querySelector('#contact-form button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+        // Show loading
+        const submitBtn = document.querySelector('#contact-form button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
     
-    // Try to send via Formspree
-    fetch('https://formspree.io/f/mqevqnoa', {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            alert("✅ Message sent successfully!");
+        // Try to send via Formspree
+        fetch('https://formspree.io/f/mqevqnoa', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                alert("✅ Message sent successfully!");
+                document.getElementById('contact-form').reset();
+            } else {
+                throw new Error('Formspree failed');
+            }
+        })
+        .catch(error => {
+            // Fallback to mailto
+            console.log('Using mailto fallback');
+            window.location.href = mailtoLink;
             document.getElementById('contact-form').reset();
-        } else {
-            throw new Error('Formspree failed');
-        }
-    })
-    .catch(error => {
-        // Fallback to mailto
-        console.log('Using mailto fallback');
-        window.location.href = mailtoLink;
-        document.getElementById('contact-form').reset();
-    })
-    .finally(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
+        })
+        .finally(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
     });
-});
+}
 
 
 const galleryModal = document.getElementById("galleryModal");
 const galleryFullscreenImage = document.getElementById("galleryFullscreenImage");
 const closeGallery = document.querySelector(".close-gallery");
 
-document.querySelectorAll(".gallery-item img").forEach(img => {
-  img.addEventListener("click", () => {
-    galleryFullscreenImage.src = img.src;
-    galleryModal.style.display = "flex";
-  });
-});
+if (galleryModal && galleryFullscreenImage && closeGallery) {
+        document.querySelectorAll(".gallery-item img").forEach(img => {
+            img.addEventListener("click", () => {
+                galleryFullscreenImage.src = img.src;
+                galleryModal.style.display = "flex";
+            });
+        });
 
-closeGallery.onclick = () => galleryModal.style.display = "none";
-window.addEventListener("click", (e) => {
-  if (e.target === galleryModal) galleryModal.style.display = "none";
-});
+        closeGallery.onclick = () => galleryModal.style.display = "none";
+        window.addEventListener("click", (e) => {
+            if (e.target === galleryModal) galleryModal.style.display = "none";
+        });
+}
 
 
 console.log("Suleman Cake Decor Loaded Successfully 🚀");
