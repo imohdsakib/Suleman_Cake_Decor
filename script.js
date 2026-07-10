@@ -341,7 +341,7 @@ if (contactForm) {
         // Create mailto link
         const subject = `Contact from ${name}`;
         const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-        const mailtoLink = `mailto:sweet0layers@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+        const mailtoLink = `mailto:mohdsulaiman8537@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
     
         // Prepare Formspree data
         const formData = new FormData();
@@ -356,7 +356,7 @@ if (contactForm) {
         submitBtn.disabled = true;
     
         // Try to send via Formspree
-        fetch('https://formspree.io/f/mqevqnoa', {
+        fetch('https://formspree.io/f/maqgrjea', {
             method: 'POST',
             body: formData,
             headers: {
@@ -390,16 +390,29 @@ const galleryFullscreenImage = document.getElementById("galleryFullscreenImage")
 const closeGallery = document.querySelector(".close-gallery");
 
 if (galleryModal && galleryFullscreenImage && closeGallery) {
+        const setModalLock = (isOpen) => {
+            document.documentElement.classList.toggle("modal-open", isOpen);
+            document.body.classList.toggle("modal-open", isOpen);
+            document.body.style.overflow = isOpen ? "hidden" : "";
+        };
+
         document.querySelectorAll(".gallery-item img").forEach(img => {
             img.addEventListener("click", () => {
                 galleryFullscreenImage.src = img.src;
                 galleryModal.style.display = "flex";
+                setModalLock(true);
             });
         });
 
-        closeGallery.onclick = () => galleryModal.style.display = "none";
+        closeGallery.onclick = () => {
+            galleryModal.style.display = "none";
+            setModalLock(false);
+        };
         window.addEventListener("click", (e) => {
-            if (e.target === galleryModal) galleryModal.style.display = "none";
+            if (e.target === galleryModal) {
+                galleryModal.style.display = "none";
+                setModalLock(false);
+            }
         });
 }
 

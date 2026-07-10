@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://suleman-cake-decor.vercel.app/sitemap.xml
