@@ -981,6 +981,10 @@ body.modal-open {
     }
 
 
+    .hero .col-lg-6 {
+    padding: 50px;
+    }
+
     .hero-title {
         font-size: 60px;
     }
@@ -1008,6 +1012,10 @@ body.modal-open {
     .about-section {
         text-align: center;
         padding: 20px 20px;
+    }
+
+    .about-section .col-lg-6 {
+    padding: 50px;
     }
 
     .about-section p {
@@ -1103,6 +1111,11 @@ body.modal-open {
         pointer-events: none;
     }
 
+    .hero .col-lg-6 {
+    padding: 50px;
+}
+
+
     .welcome-text {
         text-align: left;
         font-size: 20px;
@@ -1138,6 +1151,10 @@ body.modal-open {
     .btn-outline-custom {
         padding: 12px 24px;
         font-size: 14px;
+    }
+
+    .about-section .col-lg-6 {
+    padding: 50px;
     }
 
     .about-icon {
@@ -1304,6 +1321,10 @@ body.modal-open {
         font-size: 13px;
     }
 
+    .hero .col-lg-6 {
+    padding: 50px;
+}
+
     .hero-title {
         font-size: 30px;
     }
@@ -1332,6 +1353,10 @@ body.modal-open {
         background-image: url(images/bg.png);
         background-position: left center;
         background-size: cover;
+    }
+
+    .about-section .col-lg-6 {
+    padding: 50px;
     }
 
     .about-icons {
@@ -1421,6 +1446,10 @@ body.modal-open {
         background-position: left center;
     }
 
+    .hero .col-lg-6 {
+    padding: 20px;
+}
+
     .hero .container {
         width: 90%;
         max-width: 320px;
@@ -1430,6 +1459,10 @@ body.modal-open {
         flex-direction: column;
         align-items: flex-start;
         text-align: left;
+    }
+
+    .about-section .col-lg-6 {
+    padding: 20px;
     }
 
     .cakes-grid {
